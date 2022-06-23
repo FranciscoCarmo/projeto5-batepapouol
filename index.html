@@ -27,20 +27,20 @@
       </div>
     </header>
 
-    <div class="chat">
-      <div class="mensagem">
-        <div class="tempo">(09:22:28)</div>
-        <div class="texto">
-          João para todos: Oi galera, como ta indo a vida de todo mundo? Alguém
-          aqui joga lol?
-        </div>
-      </div>
-    </div>
+    <div class="chat"></div>
 
     <footer>
       <input type="text" placeholder="Escreva aqui..." />
-      <ion-icon name="paper-plane-outline"></ion-icon>
+
+   
+        <ion-icon onclick="enviarMensagem()"" name="paper-plane-outline"></ion-icon>
+   
     </footer>
+
+    <!-- Linka o AXIOS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- LInka o script.js -->
+    <script src="scripts.js"></script>
 
     <script
       type="module"

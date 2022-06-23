@@ -20,13 +20,13 @@ header {
   align-items: center;
 
   box-shadow: 0 4px 8px -6px gray;
-  padding: 0 20px;
 
   position: fixed;
   top: 0;
 
   z-index: 6;
   background-color: white;
+  padding: 0 20px;
 }
 
 header img {
@@ -62,10 +62,23 @@ header ion-icon {
   font-size: 14px;
 }
 
+.private {
+  background-color: #ffdede;
+}
+
+.status {
+  background-color: #dcdcdc;
+}
+
 .tempo {
   display: inline-block;
   color: #aaaaaa;
   margin-right: 8px;
+}
+
+.from,
+.to {
+  font-weight: bold;
 }
 
 .texto {
@@ -111,4 +124,5 @@ footer ion-icon {
   position: relative;
   right: 0;
   bottom: 0px;
+  cursor: pointer;
 }
