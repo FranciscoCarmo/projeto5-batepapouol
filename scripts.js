@@ -139,7 +139,7 @@ function displayMessage(oneMessage) {
     newDiv.classList.add("mensagem");
     newDiv.classList.add("private");
 
-    if (from == nome || to == nome) {
+    if (from == nome || to == nome || to == "Todos") {
       newDiv.innerHTML = `<div class='tempo'>(${time})</div>
       <div class='texto'>
         <span class='from'><em>${from}</em></span> reservadamente para <span class='to'><em>${to}</em></span>: <span class="frase">${text}</span>
@@ -161,14 +161,14 @@ function displayMessage(oneMessage) {
 function enviarMensagem() {
   const escrito = document.querySelector("input").value;
 
-  if (isPublic) {
+  if (isPublic || nomeContato == "Todos") {
     objetoMensagem = {
       from: nome,
       to: nomeContato,
       text: escrito,
       type: "message", // ou "private_message" para o bônus
     };
-  } else {
+  } else if (!isPublic) {
     objetoMensagem = {
       from: nome,
       to: nomeContato,
