@@ -18,6 +18,7 @@
     />
   </head>
   <body>
+    
     <header>
       <div>
         <img src="logo 1.png" alt="logo bate papo uol" />
@@ -30,12 +31,54 @@
     <div class="chat"></div>
 
     <footer>
+    
       <input type="text" placeholder="Escreva aqui..." />
 
    
         <ion-icon onclick="enviarMensagem()"" name="paper-plane-outline"></ion-icon>
    
     </footer>
+<div class="frasePrivate hidden"> </div>
+
+
+    <div class="cobertura hidden">
+    </div>
+    <div class="menu hidden">
+      <h3>Escolha um contato <br> para enviar mensagem:</h3>
+      <div class="online">
+        <div class="umaLinha selecionado">
+          <ion-icon name="people"></ion-icon>
+          <p>Todos</p>
+          <img src="Correct.png" alt="">
+        </div>
+      </div>
+
+<!-- Append here new names -->
+
+
+
+
+      <h3>Escolha a visibilidade:</h3>
+      <div class="visibilidade">
+
+        <div data-identifier="visibility" class="umaLinha selecionado">
+          <ion-icon name="lock-open"></ion-icon>  
+                  <p class="public">Público</p>
+                  <img src="Correct.png" alt="">
+        </div>
+
+        <div data-identifier="visibility" class="umaLinha">
+          <ion-icon name="lock-closed"></ion-icon> 
+                   <p class="privado">Reservadamente</p>
+                   <img  class="" src="Correct.png" alt="">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  
 
     <!-- Linka o AXIOS -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
