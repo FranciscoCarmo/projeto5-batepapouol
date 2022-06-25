@@ -214,6 +214,90 @@ footer ion-icon {
   display: none;
 }
 
+.entrada {
+  width: 375px;
+  max-width: 375px;
+  height: 100vh;
+
+  top: 0;
+
+  position: fixed;
+
+  z-index: 11;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.colocarNome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  top: calc(50vh - 58px);
+}
+
+.entrada img {
+  height: 92px;
+  width: 130px;
+
+  margin: 72px 0;
+}
+
+.colocarNome input {
+  height: 54px;
+  width: 261px;
+
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+
+  margin-bottom: 16px;
+
+  text-align: center;
+
+  font-size: 18px;
+  color: AEAEAE;
+}
+
+.colocarNome button {
+  height: 45px;
+  width: 109px;
+
+  border: none;
+  border-radius: 9px;
+
+  background-color: #e7e7e7;
+  color: #696969;
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+.carregando {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  top: calc(50vh - 300px);
+}
+
+.carregando img {
+  height: 291px;
+  width: 441px;
+}
+
+.carregando p {
+  position: relative;
+  top: -150px;
+  left: 10px;
+
+  font-size: 18px;
+}
+
 .hidden {
   display: none;
 }

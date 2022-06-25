@@ -4,8 +4,25 @@ let isPublic = true;
 let nomeContato = "Todos";
 let frasePrivate;
 
+function pegarNome() {
+  let caixaNome = document.querySelector(".colocarNome input");
+
+  document.querySelector(".colocarNome").classList.remove("hidden");
+  document.querySelector(".carregando").classList.add("hidden");
+
+  if (caixaNome.value) {
+    nome = caixaNome.value;
+    caixaNome.value = "";
+  }
+
+  document.querySelector(".colocarNome").classList.add("hidden");
+  document.querySelector(".carregando").classList.remove("hidden");
+
+  entrarNaSala();
+}
+
 function entrarNaSala() {
-  nome = prompt("Qual seu nome de usuário? ");
+  // nome = prompt("Qual seu nome de usuário? ");
 
   let nomeParaEnvio = {
     name: nome,
@@ -19,6 +36,7 @@ function entrarNaSala() {
   promessa.then(() => {
     setInterval(manterConexao, 5000, nomeParaEnvio);
     setInterval(getData, 3000);
+    document.querySelector(".entrada").classList.add("hidden");
   });
   promessa.catch(tratarFalha);
 }
@@ -31,7 +49,8 @@ function tratarFalha(erro) {
     alert(
       "O nome de usuário escolhido não está disponível, escolha outro nome."
     );
-    entrarNaSala();
+    document.querySelector(".colocarNome").classList.remove("hidden");
+    document.querySelector(".carregando").classList.add("hidden");
   }
 }
 
@@ -249,7 +268,7 @@ function renderizaNomes(resposta) {
     let umNome = x.name;
 
     novaDiv = document.createElement("div");
-    novaDiv.innerHTML = `<div class="umaLinha">
+    novaDiv.innerHTML = `<div class="umaLinha data-identifier = "participant"">
     <ion-icon name="person-circle"></ion-icon>
  <p>${umNome}</p>
  <img src="Correct.png" alt="">
@@ -260,8 +279,6 @@ function renderizaNomes(resposta) {
     if (nomeNovo.innerText == nomeContato) {
       nomeNovo.parentNode.classList.add("selecionado");
     }
-
-    novaDiv.parentElement.setAttribute("data-identifier", "participant");
 
     online.append(novaDiv);
   }
@@ -305,8 +322,17 @@ botaoMenu.addEventListener("click", mostraMenu);
 
 // Adiciona a opção de enviar mensagem com o Enter
 document.addEventListener("keydown", function (event) {
-  if (event.key == "Enter" && document.querySelector("input").value !== "")
+  if (
+    event.key == "Enter" &&
+    document.querySelector("footer input").value !== ""
+  )
     enviarMensagem();
 });
 
-entrarNaSala();
+document.addEventListener("keydown", function (event) {
+  if (
+    event.key == "Enter" &&
+    document.querySelector(".entrada input").value !== ""
+  )
+    pegarNome();
+});
