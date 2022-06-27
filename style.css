@@ -157,6 +157,8 @@ footer ion-icon {
   width: 259px;
   height: 100vh;
 
+  padding-bottom: 40px;
+
   left: calc(50vw - 70px);
 
   position: fixed;
