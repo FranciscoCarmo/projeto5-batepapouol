@@ -217,6 +217,7 @@ function escolheVisibilidade() {
 
   frasePrivate = document.querySelector(".frasePrivate");
 
+  // Atualiza a frase embaixo do input
   if (visi.contains("public")) {
     isPublic = true;
     frasePrivate.classList.add("hidden");
@@ -297,6 +298,18 @@ function renderizaNomes(resposta) {
       "A pessoa que você selecionou deixou a sala, a mensagem será enviada para todos"
     );
     document.querySelector(".online .umaLinha").classList.add("selecionado");
+
+    let visi = document.querySelector(".visibilidade p").classList;
+    frasePrivate = document.querySelector(".frasePrivate");
+
+    if (visi.contains("public")) {
+      isPublic = true;
+      frasePrivate.classList.add("hidden");
+    } else {
+      isPublic = false;
+      frasePrivate.classList.remove("hidden");
+      frasePrivate.innerText = `Enviando para ${nomeContato} (reservadamente)`;
+    }
   }
   let visibilidade = document.querySelectorAll(".online .umaLinha");
   for (elemento of visibilidade) {
