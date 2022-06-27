@@ -33,12 +33,13 @@ function entrarNaSala() {
     nomeParaEnvio
   );
 
-  promessa.then(() => {
-    setInterval(manterConexao, 5000, nomeParaEnvio);
-    setInterval(getData, 3000);
-    document.querySelector(".entrada").classList.add("hidden");
-  });
-  promessa.catch(tratarFalha);
+  promessa
+    .then(() => {
+      setInterval(manterConexao, 5000, nomeParaEnvio);
+      setInterval(getData, 3000);
+      document.querySelector(".entrada").classList.add("hidden");
+    })
+    .catch(tratarFalha);
 }
 
 function tratarFalha(erro) {
